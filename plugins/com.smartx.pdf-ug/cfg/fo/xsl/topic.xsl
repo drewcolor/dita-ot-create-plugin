@@ -27,68 +27,154 @@
                 <xsl:with-param name="attrSet" select="concat('__align__', $imageAlign)"/>
                 <xsl:with-param name="path" select="'../../cfg/fo/attrs/commons-attr.xsl'"/>
             </xsl:call-template>
-        <fo:external-graphic src="url('{$href}')" xsl:use-attribute-sets="image">
-            <!--Setting image height if defined-->
-            <xsl:if test="$height">
-                <xsl:attribute name="content-height">
-                <!--The following test was commented out because most people found the behavior
-                 surprising.  It used to force images with a number specified for the dimensions
-                 *but no units* to act as a measure of pixels, *if* you were printing at 72 DPI.
-                 Uncomment if you really want it. -->
-                    <xsl:choose>
-                      <!--xsl:when test="not(string(number($height)) = 'NaN')">
-                        <xsl:value-of select="concat($height div 72,'in')"/>
-                      </xsl:when-->
-                      <xsl:when test="not(string(number($height)) = 'NaN')">
-                        <xsl:value-of select="concat($height, 'px')"/>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:value-of select="$height"/>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:attribute>
-            </xsl:if>
-            <!--Setting image width if defined-->
-            <xsl:if test="$width">
-                <xsl:attribute name="content-width">
-                    <xsl:choose>
-                      <!--xsl:when test="not(string(number($width)) = 'NaN')">
-                        <xsl:value-of select="concat($width div 72,'in')"/>
-                      </xsl:when-->
-                      <xsl:when test="not(string(number($width)) = 'NaN')">
-                        <xsl:value-of select="concat($width, 'px')"/>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:value-of select="$width"/>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:attribute>
-            </xsl:if>
-            <xsl:if test="not($width) and not($height) and $scale">
-                <xsl:attribute name="content-width">
-                    <xsl:value-of select="concat($scale,'%')"/>
-                </xsl:attribute>
-            </xsl:if>
-          <xsl:if test="@scalefit = 'yes' and not($width) and not($height) and not($scale)">            
-            <xsl:attribute name="width">100%</xsl:attribute>
-            <xsl:attribute name="height">100%</xsl:attribute>
-            <xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
-            <xsl:attribute name="content-height">scale-to-fit</xsl:attribute>
-            <xsl:attribute name="scaling">uniform</xsl:attribute>
-          </xsl:if>
-          <xsl:choose>
+		<xsl:choose>
+			<xsl:when test="@placement = 'break'">
+				<fo:external-graphic src="url('{$href}')" xsl:use-attribute-sets="image__block">
+				<!--Setting image height if defined-->
+				<xsl:if test="$height">
+					<xsl:attribute name="content-height">
+					<!--The following test was commented out because most people found the behavior
+					 surprising.  It used to force images with a number specified for the dimensions
+					 *but no units* to act as a measure of pixels, *if* you were printing at 72 DPI.
+					 Uncomment if you really want it. -->
+						<xsl:choose>
+						  <!--xsl:when test="not(string(number($height)) = 'NaN')">
+							<xsl:value-of select="concat($height div 72,'in')"/>
+						  </xsl:when-->
+						  <xsl:when test="not(string(number($height)) = 'NaN')">
+							<xsl:value-of select="concat($height, 'px')"/>
+						  </xsl:when>
+						  <xsl:otherwise>
+							<xsl:value-of select="$height"/>
+						  </xsl:otherwise>
+						</xsl:choose>
+					</xsl:attribute>
+				</xsl:if>
+				<!--Setting image width if defined-->
+				<xsl:if test="$width">
+					<xsl:attribute name="content-width">
+						<xsl:choose>
+						  <!--xsl:when test="not(string(number($width)) = 'NaN')">
+							<xsl:value-of select="concat($width div 72,'in')"/>
+						  </xsl:when-->
+						  <xsl:when test="not(string(number($width)) = 'NaN')">
+							<xsl:value-of select="concat($width, 'px')"/>
+						  </xsl:when>
+						  <xsl:otherwise>
+							<xsl:value-of select="$width"/>
+						  </xsl:otherwise>
+						</xsl:choose>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="not($width) and not($height) and $scale">
+					<xsl:attribute name="content-width">
+						<xsl:value-of select="concat($scale,'%')"/>
+					</xsl:attribute>
+				</xsl:if>
+			  <xsl:if test="@scalefit = 'yes' and not($width) and not($height) and not($scale)">            
+				<xsl:attribute name="width">100%</xsl:attribute>
+				<xsl:attribute name="height">100%</xsl:attribute>
+				<xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
+				<xsl:attribute name="content-height">scale-to-fit</xsl:attribute>
+				<xsl:attribute name="scaling">uniform</xsl:attribute>
+			  </xsl:if>
+			  <xsl:if test="@placement = 'break' and not($width) and not($height) and not($scale)">            
+				<xsl:attribute name="width">100%</xsl:attribute>
+				<xsl:attribute name="height">auto</xsl:attribute>
+				<xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
+				<xsl:attribute name="content-height">auto</xsl:attribute>
+				<xsl:attribute name="scaling">uniform</xsl:attribute>
+			  </xsl:if>
+			  
+			<xsl:choose>
             <xsl:when test="*[contains(@class,' topic/alt ')]">
               <xsl:apply-templates select="*[contains(@class,' topic/alt ')]" mode="graphicAlternateText"/>
             </xsl:when>
             <xsl:when test="@alt">
               <xsl:apply-templates select="@alt" mode="graphicAlternateText"/>
             </xsl:when>
-          </xsl:choose>
+			</xsl:choose>
           
-          <xsl:apply-templates select="node() except (text(),
+			<xsl:apply-templates select="node() except (text(),
                                                       *[contains(@class, ' topic/alt ') or
                                                         contains(@class, ' topic/longdescref ')])"/>
-        </fo:external-graphic>
+				</fo:external-graphic>										
+			</xsl:when>
+			<xsl:otherwise>
+				<fo:external-graphic src="url('{$href}')" xsl:use-attribute-sets="image__inline">
+					<!--Setting image height if defined-->
+					<xsl:if test="$height">
+						<xsl:attribute name="content-height">
+						<!--The following test was commented out because most people found the behavior
+						 surprising.  It used to force images with a number specified for the dimensions
+						 *but no units* to act as a measure of pixels, *if* you were printing at 72 DPI.
+						 Uncomment if you really want it. -->
+							<xsl:choose>
+							  <!--xsl:when test="not(string(number($height)) = 'NaN')">
+								<xsl:value-of select="concat($height div 72,'in')"/>
+							  </xsl:when-->
+							  <xsl:when test="not(string(number($height)) = 'NaN')">
+								<xsl:value-of select="concat($height, 'px')"/>
+							  </xsl:when>
+							  <xsl:otherwise>
+								<xsl:value-of select="$height"/>
+							  </xsl:otherwise>
+							</xsl:choose>
+						</xsl:attribute>
+					</xsl:if>
+					<!--Setting image width if defined-->
+					<xsl:if test="$width">
+						<xsl:attribute name="content-width">
+							<xsl:choose>
+							  <!--xsl:when test="not(string(number($width)) = 'NaN')">
+								<xsl:value-of select="concat($width div 72,'in')"/>
+							  </xsl:when-->
+							  <xsl:when test="not(string(number($width)) = 'NaN')">
+								<xsl:value-of select="concat($width, 'px')"/>
+							  </xsl:when>
+							  <xsl:otherwise>
+								<xsl:value-of select="$width"/>
+							  </xsl:otherwise>
+							</xsl:choose>
+						</xsl:attribute>
+					</xsl:if>
+					<xsl:if test="not($width) and not($height) and $scale">
+						<xsl:attribute name="content-width">
+							<xsl:value-of select="concat($scale,'%')"/>
+						</xsl:attribute>
+					</xsl:if>
+				  <xsl:if test="@scalefit = 'yes' and not($width) and not($height) and not($scale)">            
+					<xsl:attribute name="width">100%</xsl:attribute>
+					<xsl:attribute name="height">100%</xsl:attribute>
+					<xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
+					<xsl:attribute name="content-height">scale-to-fit</xsl:attribute>
+					<xsl:attribute name="scaling">uniform</xsl:attribute>
+				  </xsl:if>
+				  <!--The following is the modified code-->
+				  <xsl:if test="@placement = 'inline' and not($width) and not($height) and not($scale)">            
+					<xsl:attribute name="width">auto</xsl:attribute>
+					<xsl:attribute name="height">auto</xsl:attribute>
+					<xsl:attribute name="content-width">auto</xsl:attribute>
+					<xsl:attribute name="content-height">auto</xsl:attribute>
+					<xsl:attribute name="scaling">uniform</xsl:attribute>
+				  </xsl:if>
+
+				  
+				  <xsl:choose>
+					<xsl:when test="*[contains(@class,' topic/alt ')]">
+					  <xsl:apply-templates select="*[contains(@class,' topic/alt ')]" mode="graphicAlternateText"/>
+					</xsl:when>
+					<xsl:when test="@alt">
+					  <xsl:apply-templates select="@alt" mode="graphicAlternateText"/>
+					</xsl:when>
+				  </xsl:choose>
+				  
+				  <xsl:apply-templates select="node() except (text(),
+															  *[contains(@class, ' topic/alt ') or
+																contains(@class, ' topic/longdescref ')])"/>
+				</fo:external-graphic>				
+			</xsl:otherwise>
+		</xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>

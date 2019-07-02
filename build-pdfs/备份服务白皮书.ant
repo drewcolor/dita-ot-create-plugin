@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file is part of the DITA Open Toolkit project hosted on
+Sourceforge.net. See the accompanying license.txt file for
+applicable licenses.-->
+<!-- (c) Copyright IBM Corp. 2004, 2006 All Rights Reserved. -->
+<project name="备份服务白皮书" default="samples.pdf" basedir=".">
+<property name="dita.dir" location="${basedir}/../"/>
+<property name="output.dir" location="${dita.dir}/out/pdf"/>
+<target name="samples.pdf" description="build the samples as PDF" depends="clean.samples.pdf">
+<ant antfile="${dita.dir}/build.xml">
+<property name="args.input" location="${dita.dir}/../备份服务白皮书.ditamap"/>
+<property name="transtype" value="custpdf"/>
+</ant>
+</target>
+<target name="clean.samples.pdf" description="remove the sample PDF output">
+<delete dir="${output.dir}"/>
+</target>
+</project>
