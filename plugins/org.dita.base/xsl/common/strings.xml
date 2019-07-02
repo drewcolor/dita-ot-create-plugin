@@ -162,4 +162,7 @@ See the accompanying LICENSE file for applicable license.
   <lang filename="../../../org.dita.pdf2/cfg/common/vars/zh_CN.xml" xml:lang="zh-cn"/>
   <lang filename="../../../org.dita.pdf2/cfg/common/vars/zh_TW.xml" xml:lang="zh-tw"/>
 
+<lang filename="../../../com.smartx.pdf-ug/cfg/common/strings/strings-en-us.xml" xml:lang="en"/>
+<lang filename="../../../com.smartx.pdf-ug/cfg/common/strings/strings-zh-cn.xml" xml:lang="zh-cn"/>
+
 </langlist>

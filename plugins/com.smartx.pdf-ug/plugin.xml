@@ -4,4 +4,5 @@
 <feature extension="dita.conductor.transtype.check" value="custpdf" />
 <feature extension="dita.transtype.print" value="custpdf" />
 <feature extension="dita.conductor.target.relative" file="integrator.xml" />
+<feature extension="dita.xsl.strings" file="cfg/common/strings/strings.xml"/>
 </plugin>

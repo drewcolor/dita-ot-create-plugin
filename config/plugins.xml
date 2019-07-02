@@ -258,6 +258,7 @@
 <feature extension="dita.conductor.transtype.check" value="custpdf"/>
 <feature extension="dita.transtype.print" value="custpdf"/>
 <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
+<feature extension="dita.xsl.strings" file="cfg/common/strings/strings.xml"/>
 </plugin><plugin id="org.oasis-open.dita.v1_2" version="1.2" xml:base="../plugins/org.oasis-open.dita.v1_2/plugin.xml">
   <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.dita.pdf2" version="3.3.2" xml:base="../plugins/org.dita.pdf2/plugin.xml">
