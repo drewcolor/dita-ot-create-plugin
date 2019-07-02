@@ -5,4 +5,5 @@ version="2.0">
 <xsl:import href="topic-attr.xsl"/>
 <xsl:import href="commons-attr.xsl"/>
 <xsl:import href="commons-attr_fop.xsl"/>
+<xsl:import href="hi-domain-attr.xsl"/>
 </xsl:stylesheet>
