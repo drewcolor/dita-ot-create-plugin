@@ -1,7 +1,7 @@
 #!/bin/sh
+CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2/lib/fo.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.eclipsehelp/lib/eclipsehelp.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.htmlhelp/lib/htmlhelp.jar"
-CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2/lib/fo.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2.axf/lib/axf.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2.fop/lib/avalon-framework-api-4.3.1.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2.fop/lib/avalon-framework-impl-4.3.1.jar"

@@ -9,7 +9,7 @@ See the accompanying LICENSE file for applicable license.
   <!-- Start of Ant Messages -->
   <message id="DOTA001F" type="FATAL">
     <reason>"%1" is not a recognized transformation type.</reason>
-    <response>Supported transformation types are dita, eclipsehelp, html5, htmlhelp, markdown, markdown_gitbook, markdown_github, pdf, pdf2, tocjs, troff, xhtml.</response>
+    <response>Supported transformation types are custpdf, dita, eclipsehelp, html5, htmlhelp, markdown, markdown_gitbook, markdown_github, pdf, pdf2, tocjs, troff, xhtml.</response>
   </message>
   
   <message id="DOTA002F" type="FATAL">
@@ -796,32 +796,6 @@ See the accompanying LICENSE file for applicable license.
       
   <!-- Add any messages defined by plugins. -->
   
-  <message id="DOTA006W" type="WARN">
-    <reason>Absolute paths on the local file system are not supported for the CSSPATH parameter.</reason>
-    <response>Please use a relative path or full URI instead.</response>
-  </message>
-  <message id="DOTA007E" type="ERROR">
-    <reason>Cannot find the running-footer file "%1".</reason>
-    <response>Please double check the value to ensure it is specified correctly.</response>
-  </message>
-  <message id="DOTA008E" type="ERROR">
-    <reason>Cannot find the running-header file "%1".</reason>
-    <response>Please double check the value to ensure it is specified correctly.</response>
-  </message>
-  <message id="DOTA009E" type="ERROR">
-    <reason>Cannot find the specified heading file "%1".</reason>
-    <response>Please double check the value to ensure it is specified correctly.</response>
-  </message>
-  <message id="DOTA069W" type="WARN">
-    <reason>Target "%1" is deprecated.</reason>
-    <response>Remove references to this target from your custom XSLT or plug-ins.</response>
-  </message>
-
-  <message id="DOTX048I" type="INFO">
-    <reason>In order to include peer or external topic '%1' in your help file, you may need to recompile the CHM file after making the file available.</reason>
-    <response/>
-  </message>
-
   
   <message id="DOTA066F" type="FATAL">
     <reason>Cannot find the user specified XSLT stylesheet '%1'.</reason>
@@ -905,6 +879,32 @@ See the accompanying LICENSE file for applicable license.
   </message>
   <message id="PDFX013F" type="FATAL">
     <reason>The PDF file '%1' could not be generated.</reason>
+    <response/>
+  </message>
+
+  <message id="DOTA006W" type="WARN">
+    <reason>Absolute paths on the local file system are not supported for the CSSPATH parameter.</reason>
+    <response>Please use a relative path or full URI instead.</response>
+  </message>
+  <message id="DOTA007E" type="ERROR">
+    <reason>Cannot find the running-footer file "%1".</reason>
+    <response>Please double check the value to ensure it is specified correctly.</response>
+  </message>
+  <message id="DOTA008E" type="ERROR">
+    <reason>Cannot find the running-header file "%1".</reason>
+    <response>Please double check the value to ensure it is specified correctly.</response>
+  </message>
+  <message id="DOTA009E" type="ERROR">
+    <reason>Cannot find the specified heading file "%1".</reason>
+    <response>Please double check the value to ensure it is specified correctly.</response>
+  </message>
+  <message id="DOTA069W" type="WARN">
+    <reason>Target "%1" is deprecated.</reason>
+    <response>Remove references to this target from your custom XSLT or plug-ins.</response>
+  </message>
+
+  <message id="DOTX048I" type="INFO">
+    <reason>In order to include peer or external topic '%1' in your help file, you may need to recompile the CHM file after making the file available.</reason>
     <response/>
   </message>
 
