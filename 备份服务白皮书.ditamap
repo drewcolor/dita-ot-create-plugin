@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"map.dtd">
+<map xml:lang="zh-cn">
+  <title>SMTX OS 备份服务手册</title>
+
+  <topicmeta>
+    <navtitle>SMTX OS 备份服务手册</navtitle>
+
+    <copyright>
+      <copyryear year="2019"/>
+
+      <copyrholder>SmartX</copyrholder>
+    </copyright>
+
+    <prodinfo>
+      <prodname>SMTX OS</prodname>
+
+      <vrmlist>
+        <vrm release="4.0.0" version="4.0.0"/>
+      </vrmlist>
+
+      <component>备份服务</component>
+    </prodinfo>
+  </topicmeta>
+
+  <topicref format="markdown"
+            href="content/concepts/backup-service-white-paper/backup-service-wp.md"
+            xml:lang="zh-CN"/>
+</map>

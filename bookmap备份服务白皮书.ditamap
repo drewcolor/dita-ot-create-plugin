@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
+"bookmap.dtd">
+<bookmap xml:lang="zh-CN">
+  <booktitle>
+    <mainbooktitle>SMTX OS 备份服务白皮书</mainbooktitle>
+  </booktitle>
+
+  <bookmeta>
+    <authorinformation>
+      <organizationinfo>
+        <namedetails>
+          <personname>
+            <lastname>SmartX</lastname>
+          </personname>
+        </namedetails>
+      </organizationinfo>
+    </authorinformation>
+  </bookmeta>
+
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+
+    <preface>
+      <topicref format="markdown"
+                href="content/concepts/backup-service-white-paper/_index.md"/>
+    </preface>
+  </frontmatter>
+
+  <chapter format="markdown"
+           href="content/concepts/backup-service-white-paper/backup-service-wp.md"
+           toc="no" xml:lang="zh-CN"/>
+</bookmap>
