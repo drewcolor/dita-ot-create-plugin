@@ -22,7 +22,7 @@
     </xsl:template>
   
   <xsl:template name="createFrontCoverContents">
-    <fo:block>
+    <fo:block xsl:use-attribute-sets="__frontmatter__product">
       <xsl:value-of select="$smtx.productName"/><xsl:text> </xsl:text>
       <xsl:value-of select="$smtx.productVersion"/>
     </fo:block>
@@ -46,12 +46,14 @@
 	  <xsl:value-of select="$smtx.bookTitle"/>
     </fo:block>
 	<!-- 20190704 The following added a logo -->
-	<fo:block>
-      <fo:external-graphic src="url(Customization/OpenTopic/common/artwork/logo.png)"/>
-    </fo:block>
-	<fo:block>
-    <fo:basic-link external-destination="http://www.smartx.com/">http://www.smartx.com/</fo:basic-link>
-    </fo:block>
+	<fo:block-container xsl:use-attribute-sets="__frontmatter__logo__container">
+		<fo:block xsl:use-attribute-sets="__frontmatter__logo">
+		  <fo:external-graphic src="url(Customization/OpenTopic/common/artwork/logo.png)"/>
+		</fo:block>
+		<fo:block xsl:use-attribute-sets="__frontmatter__link">
+		<fo:basic-link external-destination="http://www.smartx.com/">http://www.smartx.com/</fo:basic-link>
+		</fo:block>
+	</fo:block-container>
     <!-- set the subtitle -->
     <xsl:apply-templates select="$map//*[contains(@class,' bookmap/booktitlealt ')]"/>
     <fo:block xsl:use-attribute-sets="__frontmatter__owner">
