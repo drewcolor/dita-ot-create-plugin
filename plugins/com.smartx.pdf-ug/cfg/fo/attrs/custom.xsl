@@ -7,4 +7,5 @@ version="2.0">
 <xsl:import href="commons-attr_fop.xsl"/>
 <xsl:import href="hi-domain-attr.xsl"/>
 <xsl:import href="basic-settings.xsl"/>
+<xsl:import href="layout-masters-attr.xsl"/>
 </xsl:stylesheet>

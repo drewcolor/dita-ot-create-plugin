@@ -98,7 +98,9 @@ See the accompanying LICENSE file for applicable license.
         <xsl:attribute name="force-page-count">
             <xsl:choose>
                 <xsl:when test="/*[contains(@class, ' bookmap/bookmap ')]">
-                    <xsl:value-of select="'even'"/>
+				    <!--20190704 yinghao remove black pages
+					<xsl:value-of select="'even'"/>-->
+                    <xsl:value-of select="'auto'"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="'auto'"/>
