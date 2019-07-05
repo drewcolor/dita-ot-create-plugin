@@ -18,9 +18,10 @@ See the accompanying LICENSE file for applicable license.
 
   <xsl:variable name="body-margin">25.4mm</xsl:variable>
   
-  <xsl:variable name="page-margin-outside-front">1in</xsl:variable>
-  <xsl:variable name="page-margin-top-front">1in</xsl:variable>
-  <xsl:variable name="page-margin-bottom-front">1in</xsl:variable>
+  <xsl:variable name="page-margin-outside-front">0in</xsl:variable>
+  <xsl:variable name="page-margin-inside-front">0in</xsl:variable>
+  <xsl:variable name="page-margin-top-front">0in</xsl:variable>
+  <xsl:variable name="page-margin-bottom-front">0in</xsl:variable>
   
   <xsl:variable name="chapterLayout" select="if (normalize-space($antArgsChapterLayout)) then $antArgsChapterLayout else 'BASIC'"/>
   

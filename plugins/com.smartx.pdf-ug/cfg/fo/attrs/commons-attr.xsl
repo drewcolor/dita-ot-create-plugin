@@ -47,7 +47,7 @@ See the accompanying LICENSE file for applicable license.
   <xsl:attribute-set name="common.border__bottom">
     <xsl:attribute name="border-after-style">solid</xsl:attribute>
     <xsl:attribute name="border-after-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-after-color">red</xsl:attribute>
+    <xsl:attribute name="border-after-color">black</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="common.border__right">

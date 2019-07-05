@@ -27,7 +27,6 @@ See the accompanying LICENSE file for applicable license.
     <xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
       <xsl:value-of select="$page-margin-outside"/>
     </xsl:attribute>
-	<xsl:attribute name="background-color">#C0C0C0</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="region-body.even">
@@ -47,7 +46,7 @@ See the accompanying LICENSE file for applicable license.
     <xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
       <xsl:value-of select="$page-margin-inside"/>
     </xsl:attribute>
-	<xsl:attribute name="background-color">#C0C0C0</xsl:attribute>
+	
   </xsl:attribute-set>
   
   <xsl:attribute-set name="region-body__frontmatter.odd" use-attribute-sets="region-body.odd">
@@ -58,15 +57,15 @@ See the accompanying LICENSE file for applicable license.
 	  <xsl:value-of select="$page-margin-bottom-front"/>
 	</xsl:attribute>
 	<xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-left' else 'margin-right'}">
-	  <xsl:value-of select="$page-margin-inside"/>
+	  <xsl:value-of select="$page-margin-inside-front"/>
 	</xsl:attribute>
 	<xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
 	  <xsl:value-of select="$page-margin-outside-front"/>
 	</xsl:attribute>
-	<xsl:attribute name="background-color">#ffc0ff</xsl:attribute>
-	<xsl:attribute name="background-image">url(Customization/OpenTopic/common/artwork/logo.png)</xsl:attribute>
+	
+	<xsl:attribute name="background-image">url(Customization/OpenTopic/common/artwork/doc-pdf-ug-bg.svg)</xsl:attribute>
 <xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
-<xsl:attribute name="background-position">100px 100px</xsl:attribute>
+<xsl:attribute name="background-position">0px 0px</xsl:attribute>
   </xsl:attribute-set>
   <xsl:attribute-set name="region-body__frontmatter.even" use-attribute-sets="region-body.even">
 	<xsl:attribute name="margin-top">
@@ -79,9 +78,8 @@ See the accompanying LICENSE file for applicable license.
 	  <xsl:value-of select="$page-margin-outside-front"/>
 	</xsl:attribute>
 	<xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
-	  <xsl:value-of select="$page-margin-inside"/>
+	  <xsl:value-of select="$page-margin-inside-front"/>
 	</xsl:attribute>
-	<xsl:attribute name="background-color">#ffc0ff</xsl:attribute>
   </xsl:attribute-set>
     
 </xsl:stylesheet>
