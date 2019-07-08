@@ -62,7 +62,19 @@
 		<fo:block xsl:use-attribute-sets="__frontmatter__title">
 		  <xsl:value-of select="$smtx.bookTitle"/>
 		</fo:block>
+		<fo:block-container xsl:use-attribute-sets="__frontmatter__date__container">
+		<fo:block xsl:use-attribute-sets="__frontmatter__date">
+		  <xsl:text>产品发布日期：</xsl:text>
+		  <xsl:value-of select="$smtx.pubDate"/>
+		</fo:block>
+		<fo:block xsl:use-attribute-sets="__frontmatter__date">
+		  <xsl:text>文档更新日期：</xsl:text>
+		  <xsl:value-of select="$smtx.currentDate"/>
+		</fo:block>
+		</fo:block-container>
 	</fo:block-container>
+
+
 
 	
 	<!-- 20190704 The following added a logo -->

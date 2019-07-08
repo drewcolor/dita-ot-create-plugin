@@ -67,6 +67,13 @@ See the accompanying LICENSE file for applicable license.
 		<xsl:attribute name="font-family">Source Han Sans CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
 	</xsl:attribute-set>
 	
+	<xsl:attribute-set name="__frontmatter__date">
+		<xsl:attribute name="font-size">12pt</xsl:attribute>
+		<xsl:attribute name="text-align">left</xsl:attribute>
+		<xsl:attribute name="font-family">Source Han Sans CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
+        <xsl:attribute name="line-height">140%</xsl:attribute> 
+	</xsl:attribute-set>	
+	
 <!--	<xsl:attribute-set name="__frontmatter__logo__container">
 		<xsl:attribute name="position">absolute</xsl:attribute>
 		<xsl:attribute name="top">3in</xsl:attribute>
@@ -89,6 +96,13 @@ See the accompanying LICENSE file for applicable license.
 		<xsl:attribute name="position">absolute</xsl:attribute>
 		<xsl:attribute name="top">2in</xsl:attribute>
 		<xsl:attribute name="left">1in</xsl:attribute>
+		<xsl:attribute name="right">1in</xsl:attribute>
+	</xsl:attribute-set>
+	
+	<xsl:attribute-set name="__frontmatter__date__container">
+	    <xsl:attribute name="space-before">24pt</xsl:attribute>
+        <xsl:attribute name="space-before.conditionality">retain</xsl:attribute>
+		<xsl:attribute name="position">relative</xsl:attribute>
 	</xsl:attribute-set>
 
 </xsl:stylesheet>

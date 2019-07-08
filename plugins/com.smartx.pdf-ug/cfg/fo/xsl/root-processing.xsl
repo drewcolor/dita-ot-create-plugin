@@ -70,4 +70,6 @@
 	</xsl:choose>
 </xsl:variable>
 
+<xsl:variable name="smtx.currentDate" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+
 </xsl:stylesheet>
