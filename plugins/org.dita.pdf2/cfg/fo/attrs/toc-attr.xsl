@@ -74,6 +74,7 @@ See the accompanying LICENSE file for applicable license.
                 <xsl:otherwise>normal</xsl:otherwise>
             </xsl:choose>
         </xsl:attribute>
+		<xsl:attribute name="line-height">150%</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="__toc__chapter__content" use-attribute-sets="__toc__topic__content">

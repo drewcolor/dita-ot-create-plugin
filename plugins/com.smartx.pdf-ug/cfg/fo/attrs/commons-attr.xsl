@@ -78,6 +78,12 @@ See the accompanying LICENSE file for applicable license.
     <xsl:attribute name="space-before">0.6em</xsl:attribute>
     <xsl:attribute name="space-after">0.6em</xsl:attribute>
   </xsl:attribute-set>
+  
+   <xsl:attribute-set name="common.blockquote">
+    <xsl:attribute name="space-before">0.6em</xsl:attribute>
+    <xsl:attribute name="space-after">0.6em</xsl:attribute>
+	<xsl:attribute name="padding-top">3pt</xsl:attribute>
+  </xsl:attribute-set>
 
   <xsl:attribute-set name="common.link">
     <xsl:attribute name="color">blue</xsl:attribute>

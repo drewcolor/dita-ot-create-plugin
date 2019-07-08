@@ -9,7 +9,7 @@ See the accompanying LICENSE file for applicable license.
   <!-- Start of Ant Messages -->
   <message id="DOTA001F" type="FATAL">
     <reason>"%1" is not a recognized transformation type.</reason>
-    <response>Supported transformation types are custpdf, dita, eclipsehelp, html5, htmlhelp, markdown, markdown_gitbook, markdown_github, pdf, pdf2, tocjs, troff, xhtml.</response>
+    <response>Supported transformation types are custpdf, dita, eclipsehelp, fo, html5, htmlhelp, markdown, markdown_gitbook, markdown_github, pdf, pdf2, tocjs, troff, xhtml.</response>
   </message>
   
   <message id="DOTA002F" type="FATAL">

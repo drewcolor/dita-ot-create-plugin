@@ -23,6 +23,8 @@ See the accompanying LICENSE file for applicable license.
   <xsl:variable name="page-margin-top-front">0in</xsl:variable>
   <xsl:variable name="page-margin-bottom-front">0in</xsl:variable>
   
+  <xsl:variable name="default-line-height">12pt</xsl:variable>
+  
   <xsl:variable name="chapterLayout" select="if (normalize-space($antArgsChapterLayout)) then $antArgsChapterLayout else 'BASIC'"/>
   
 </xsl:stylesheet>

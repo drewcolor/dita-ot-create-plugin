@@ -32,4 +32,13 @@ version="2.0">
 		<xsl:attribute name="line-height">4pt</xsl:attribute>
     </xsl:attribute-set>
 	
+    <xsl:attribute-set name="lq" use-attribute-sets="common.blockquote">
+        <xsl:attribute name="start-indent">30pt + from-parent(start-indent)</xsl:attribute>
+        <xsl:attribute name="end-indent">15pt + from-parent(end-indent)</xsl:attribute>
+		<xsl:attribute name="background-color">#fff7d0</xsl:attribute>
+		<xsl:attribute name="padding-bottom">1pt</xsl:attribute>
+		<xsl:attribute name="padding-left">5pt</xsl:attribute>
+		<xsl:attribute name="border-left">3pt solid #ffe564</xsl:attribute>
+    </xsl:attribute-set>
+	
 </xsl:stylesheet>

@@ -61,7 +61,6 @@ See the accompanying LICENSE file for applicable license.
   <xsl:variable name="mirror-page-margins" select="false()"/>
 
   <xsl:variable name="default-font-size">10pt</xsl:variable>
-  <xsl:variable name="default-line-height">12pt</xsl:variable>
 
   <xsl:variable name="generate-front-cover" select="true()"/>
   <xsl:variable name="generate-back-cover" select="false()"/>

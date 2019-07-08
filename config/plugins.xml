@@ -65,6 +65,11 @@
     <parser class="com.elovirta.dita.html.HtmlReader" format="html"/>
     <parser class="com.elovirta.dita.html.HtmlReader" format="hdita"/>
   </feature>
+</plugin><plugin id="com.elovirta.fo" version="1.0.0" xml:base="../plugins/com.elovirta.fo/plugin.xml">
+  <require plugin="org.dita.pdf2"/>
+  <transtype desc="FO" extends="pdf" name="fo"/>
+  <feature extension="dita.transtype.print" value="fo"/>
+  <feature extension="ant.import" file="build.xml"/>
 </plugin><plugin id="org.dita.base" version="3.3.2" xml:base="../plugins/org.dita.base/plugin.xml">
   <!-- base extension points -->
   <extension-point id="package.version" name="Plug-in version"/>
