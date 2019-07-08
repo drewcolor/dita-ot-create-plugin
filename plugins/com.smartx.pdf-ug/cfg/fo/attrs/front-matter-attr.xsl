@@ -42,30 +42,53 @@ See the accompanying LICENSE file for applicable license.
         <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="line-height">140%</xsl:attribute>
 		<xsl:attribute name="text-align">left</xsl:attribute>
-		<xsl:attribute name="color">#990033</xsl:attribute>
+		<xsl:attribute name="color">black</xsl:attribute>
     </xsl:attribute-set>
 	
 	<xsl:attribute-set name="__frontmatter__product">
-		<xsl:attribute name="font-size">14pt</xsl:attribute>
+        <xsl:attribute name="space-before">24pt</xsl:attribute>
+        <xsl:attribute name="space-before.conditionality">retain</xsl:attribute>
+        <xsl:attribute name="font-size">36pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="line-height">140%</xsl:attribute>
 		<xsl:attribute name="text-align">left</xsl:attribute>
-		<xsl:attribute name="font-family">Source Han SANs CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
+		<xsl:attribute name="font-family">Source Han Sans CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
+		<xsl:attribute name="color">#0096ff</xsl:attribute>
 	</xsl:attribute-set>
 	
 	<xsl:attribute-set name="__frontmatter__logo">
-		<xsl:attribute name="text-align">right</xsl:attribute>
+		<xsl:attribute name="text-align">left</xsl:attribute>
 	</xsl:attribute-set>
 	
 	<xsl:attribute-set name="__frontmatter__link">
 		<xsl:attribute name="font-size">12pt</xsl:attribute>
 		<xsl:attribute name="font-weight">bold</xsl:attribute>
-		<xsl:attribute name="text-align">right</xsl:attribute>
-		<xsl:attribute name="font-family">Source Han SANs CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
+		<xsl:attribute name="text-align">left</xsl:attribute>
+		<xsl:attribute name="font-family">Source Han Sans CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
 	</xsl:attribute-set>
+	
+<!--	<xsl:attribute-set name="__frontmatter__logo__container">
+		<xsl:attribute name="position">absolute</xsl:attribute>
+		<xsl:attribute name="top">3in</xsl:attribute>
+		<xsl:attribute name="left">1in</xsl:attribute>		
+	</xsl:attribute-set>
+	
+	<xsl:attribute-set name="__frontmatter__product__container">
+		<xsl:attribute name="position">absolute</xsl:attribute>
+		<xsl:attribute name="top">3in</xsl:attribute>
+		<xsl:attribute name="left">4in</xsl:attribute>
+	</xsl:attribute-set>-->
 	
 	<xsl:attribute-set name="__frontmatter__logo__container">
 		<xsl:attribute name="position">absolute</xsl:attribute>
-		<xsl:attribute name="top">8.35in</xsl:attribute>
+		<xsl:attribute name="top">0.5in</xsl:attribute>
+		<xsl:attribute name="left">0.5in</xsl:attribute>		
 	</xsl:attribute-set>
-
+	
+	<xsl:attribute-set name="__frontmatter__product__container">
+		<xsl:attribute name="position">absolute</xsl:attribute>
+		<xsl:attribute name="top">2in</xsl:attribute>
+		<xsl:attribute name="left">1in</xsl:attribute>
+	</xsl:attribute-set>
 
 </xsl:stylesheet>

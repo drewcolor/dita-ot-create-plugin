@@ -22,12 +22,18 @@
     </xsl:template>
   
   <xsl:template name="createFrontCoverContents">
-    <fo:block xsl:use-attribute-sets="__frontmatter__product">
+    <!--
+	
+	<fo:block xsl:use-attribute-sets="__frontmatter__product">
       <xsl:value-of select="$smtx.productName"/><xsl:text> </xsl:text>
       <xsl:value-of select="$smtx.productVersion"/>
     </fo:block>
+	
+	-->
 	<!-- set the title -->
-    <fo:block xsl:use-attribute-sets="__frontmatter__title">
+    
+	<!--
+	<fo:block xsl:use-attribute-sets="__frontmatter__title">-->
       <!--
 	  <xsl:choose>
         <xsl:when test="$map/*[contains(@class,' topic/title ')][1]">
@@ -43,15 +49,29 @@
           <xsl:value-of select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"/>
         </xsl:otherwise>
       </xsl:choose>-->
+	  
+	  <!--
 	  <xsl:value-of select="$smtx.bookTitle"/>
-    </fo:block>
+    </fo:block>-->
+
+	<fo:block-container xsl:use-attribute-sets="__frontmatter__product__container">
+		<fo:block xsl:use-attribute-sets="__frontmatter__product">
+		  <xsl:value-of select="$smtx.productName"/><xsl:text> </xsl:text>
+		  <xsl:value-of select="$smtx.productVersion"/>
+		</fo:block>
+		<fo:block xsl:use-attribute-sets="__frontmatter__title">
+		  <xsl:value-of select="$smtx.bookTitle"/>
+		</fo:block>
+	</fo:block-container>
+
+	
 	<!-- 20190704 The following added a logo -->
 	<fo:block-container xsl:use-attribute-sets="__frontmatter__logo__container">
 		<fo:block xsl:use-attribute-sets="__frontmatter__logo">
 		  <fo:external-graphic src="url(Customization/OpenTopic/common/artwork/logo.png)"/>
 		</fo:block>
 		<fo:block xsl:use-attribute-sets="__frontmatter__link">
-		<fo:basic-link external-destination="http://www.smartx.com/">http://www.smartx.com/</fo:basic-link>
+		<!--<fo:basic-link external-destination="http://www.smartx.com/">http://www.smartx.com/</fo:basic-link>-->
 		</fo:block>
 	</fo:block-container>
     <!-- set the subtitle -->
