@@ -9,6 +9,17 @@ See the accompanying LICENSE file for applicable license.
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
                 version="2.0">
+				
+				
+  <xsl:attribute-set name="simple-page-master">
+    <xsl:attribute name="page-width">
+      <xsl:value-of select="$page-width"/>
+    </xsl:attribute>
+    <xsl:attribute name="page-height">
+      <xsl:value-of select="$page-height"/>
+    </xsl:attribute>
+	
+  </xsl:attribute-set>
   
   <xsl:attribute-set name="region-body.odd">
     <xsl:attribute name="margin-top">
@@ -27,6 +38,11 @@ See the accompanying LICENSE file for applicable license.
     <xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
       <xsl:value-of select="$page-margin-outside"/>
     </xsl:attribute>
+
+    <xsl:attribute name="background-image"><xsl:if test="$DRAFT='yes'">url(Customization/OpenTopic/common/artwork/draft.png)</xsl:if></xsl:attribute>
+	<xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
+	<xsl:attribute name="background-position">400px 500px</xsl:attribute>
+	
   </xsl:attribute-set>
 
   <xsl:attribute-set name="region-body.even">
@@ -46,6 +62,9 @@ See the accompanying LICENSE file for applicable license.
     <xsl:attribute name="{if ($writing-mode = 'lr') then 'margin-right' else 'margin-left'}">
       <xsl:value-of select="$page-margin-inside"/>
     </xsl:attribute>
+    <xsl:attribute name="background-image"><xsl:if test="$DRAFT='yes'">url(Customization/OpenTopic/common/artwork/draft.png)</xsl:if></xsl:attribute>
+	<xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
+	<xsl:attribute name="background-position">400px 600px</xsl:attribute>
 	
   </xsl:attribute-set>
   
@@ -64,8 +83,9 @@ See the accompanying LICENSE file for applicable license.
 	</xsl:attribute>
 	
 	<xsl:attribute name="background-image">url(Customization/OpenTopic/common/artwork/doc-pdf-ug-bg.svg)</xsl:attribute>
-<xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
-<xsl:attribute name="background-position">0px 0px</xsl:attribute>
+	<xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
+	<xsl:attribute name="background-position">0px 0px</xsl:attribute>
+	
   </xsl:attribute-set>
   <xsl:attribute-set name="region-body__frontmatter.even" use-attribute-sets="region-body.even">
 	<xsl:attribute name="margin-top">

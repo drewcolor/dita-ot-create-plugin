@@ -71,7 +71,8 @@ See the accompanying LICENSE file for applicable license.
 		<xsl:attribute name="font-size">12pt</xsl:attribute>
 		<xsl:attribute name="text-align">left</xsl:attribute>
 		<xsl:attribute name="font-family">Source Han Sans CN, Trebuchet MS, Arial Unicode MS, Helvetica</xsl:attribute>
-        <xsl:attribute name="line-height">140%</xsl:attribute> 
+        <xsl:attribute name="line-height">140%</xsl:attribute>
+		<xsl:attribute name="color"><xsl:if test="$DRAFT='yes'">red</xsl:if></xsl:attribute>
 	</xsl:attribute-set>	
 	
 <!--	<xsl:attribute-set name="__frontmatter__logo__container">

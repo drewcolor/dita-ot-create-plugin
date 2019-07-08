@@ -71,6 +71,9 @@
 		  <xsl:text>文档更新日期：</xsl:text>
 		  <xsl:value-of select="$smtx.currentDate"/>
 		</fo:block>
+		<fo:block xsl:use-attribute-sets="__frontmatter__date">
+		  <xsl:if test="$DRAFT='yes'"><xsl:text>注意：该版本文档仍在开发中，当前草稿仅供预览。</xsl:text></xsl:if>
+		</fo:block>
 		</fo:block-container>
 	</fo:block-container>
 

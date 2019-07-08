@@ -25,7 +25,7 @@
                         </pagenum>
                     </xsl:with-param>
                 </xsl:call-template>
-				<fo:inline>
+				<fo:inline xsl:use-attribute-sets="__header__image">
 					<fo:external-graphic src="url(Customization/OpenTopic/common/artwork/favicon.png)"/>
 				</fo:inline>
             </fo:block>
@@ -60,7 +60,7 @@
     <xsl:template name="insertBodyFirstHeader">
         <fo:static-content flow-name="first-body-header">
             <fo:block xsl:use-attribute-sets="__body__first__header">
-                <!--
+                
 				<xsl:call-template name="getVariable">
                     <xsl:with-param name="id" select="'Body first header'"/>
                     <xsl:with-param name="params">
@@ -79,10 +79,9 @@
                         </pagenum>
                     </xsl:with-param>
                 </xsl:call-template>
-				-->
-				<fo:inline>
+				<!--<fo:inline>
 				<fo:external-graphic src="url(Customization/OpenTopic/common/artwork/logo.png)"/>
-				</fo:inline>
+				</fo:inline>-->
             </fo:block>
         </fo:static-content>
     </xsl:template>
